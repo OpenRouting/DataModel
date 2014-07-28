@@ -58,6 +58,10 @@ Ways are linear features that represent paths, roads, and highways.
 * [width] (http://wiki.openstreetmap.org/wiki/Key:width) - The width of the path in meters
 * [smoothness] (http://wiki.openstreetmap.org/wiki/Key:smoothness) - A classification scheme regarding the physical usability of a way for wheeled vehicles, particularly regarding surface regularity/flatness. Choice of: impassable, very_horrible, horrible, very_bad, bad, intermediate, good, excellent
 * [sloped_curb] (http://wiki.openstreetmap.org/wiki/Key:sloped_curb) - The percent incline of the curb cutout.  AKA wheelchair ramps
+* [lit] (http://wiki.openstreetmap.org/wiki/Lit) - Determines whether the path is lit with lamps at night. Choice of: Yes, No
+* foot - Determines whether pedestrians have access. Choice of: Yes, No
+* bicycles - Determines whether pedestrians have access. Choice of: Yes, No
+* horses - Determines whether horses have access. Choice of: Yes, No
 
 
 
