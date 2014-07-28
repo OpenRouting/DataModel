@@ -43,7 +43,7 @@ Ways are linear features that represent paths, roads, and highways.
 
 
 ##### Pedestrian
-* highway = [pedestrian] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian) - A road or plaza that only supports pedestrian traffic. A pedestrian way could support a car and often do for deliveries after hours. Often around open street markets
+* [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [pedestrian] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian) - A road or plaza that only supports pedestrian traffic. A pedestrian way could support a car and often do for deliveries after hours. Often around open street markets
 * [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - Choice of paved, asphalt, cobblestone, sett (aka flat cobblestones), concrete, paving\_stones, unpaved, compacted, dirt, fine_gravel, grass, gravel
 
 ##### Path
