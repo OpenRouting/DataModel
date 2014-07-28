@@ -14,3 +14,9 @@ The open routing database is built on PostgreSQL, PostGIS, and PGRouting to defi
 ## Installation
 
 Nothing is done yet!
+
+
+## OSM wiki links
+
+* [Wheel Chair Tags] (http://wiki.openstreetmap.org/wiki/Wheelchair_routing)
+* [Telenav Tags] (http://wiki.openstreetmap.org/wiki/OSM_tags_for_routing/Telenav)
