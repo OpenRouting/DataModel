@@ -47,7 +47,7 @@ Ways are linear features that represent paths, roads, and highways.
 * [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - Choice of paved, asphalt, cobblestone, sett (aka flat cobblestones), concrete, paving\_stones, unpaved, compacted, dirt, fine_gravel, grass, gravel
 
 ##### Path
-* highway = [path] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath) - Generic non-vehicular way designation.  Should only be used if unable to determine if the way is normally a pedestrian or bicycle network.
+* [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [path] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath) - Generic non-vehicular way designation.  Should only be used if unable to determine if the way is normally a pedestrian or bicycle network.
 * [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - The material used for the surface.  Choice of: paved, asphalt, cobblestone, sett (aka flat cobblestones), concrete, paving\_stones, unpaved, compacted, dirt, fine_gravel, grass, gravel
 * [name] (http://wiki.openstreetmap.org/wiki/Key:name) - The name of the path 
 
