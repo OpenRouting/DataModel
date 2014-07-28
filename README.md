@@ -54,9 +54,10 @@ Ways are linear features that represent paths, roads, and highways.
 ###### Like to have:
 * [sac_scale] (http://wiki.openstreetmap.org/wiki/Key:sac_scale) - A bicycle route classification system. Choice of: hiking, mountain_hiking, demanding_mountain_hiking)
 * [trail_visibility] (http://wiki.openstreetmap.org/wiki/Key:trail_visibility) - How well the path stands out from the surroundings.  Choice of: no, horrible, bad, intermediate, good, excellent
-* [incline] (http://wiki.openstreetmap.org/wiki/Key:incline) The percent incline or decline of the path
-* [width] (http://wiki.openstreetmap.org/wiki/Key:width) The width of the path in meters
-
+* [incline] (http://wiki.openstreetmap.org/wiki/Key:incline) - The percent incline or decline for the way.
+* [width] (http://wiki.openstreetmap.org/wiki/Key:width) - The width of the path in meters
+* [smoothness] (http://wiki.openstreetmap.org/wiki/Key:smoothness) - A classification scheme regarding the physical usability of a way for wheeled vehicles, particularly regarding surface regularity/flatness. Choice of: impassable, very_horrible, horrible, very_bad, bad, intermediate, good, excellent
+* [sloped_curb] (http://wiki.openstreetmap.org/wiki/Key:sloped_curb) - The percent incline of the curb cutout.  AKA wheelchair ramps
 
 
 
