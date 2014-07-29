@@ -96,7 +96,3 @@ Ways are linear features that represent paths, roads, and highways.
 * horses - Determines whether horses have access. Choice of: 
   * Yes
   * No
-
-
-
-
