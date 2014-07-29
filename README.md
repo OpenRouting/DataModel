@@ -29,6 +29,7 @@ Nothing is done yet!
 Ways are linear features that represent paths, roads, and highways.
 
 #### Required Tags
+* [name] (http://wiki.openstreetmap.org/wiki/Key:name) - The name of the path 
 * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) - Determines whether the way is a bicycle, pedestrian, or vehicular route.
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [footway] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) - A pedestrian walking path or trail.  This is the normal tag for pedestrian traffic.
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [path] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpath) - Generic non-vehicular way designation.  Should only be used if unable to determine if the way is normally a pedestrian or bicycle network.
@@ -51,7 +52,18 @@ Ways are linear features that represent paths, roads, and highways.
   * grass
   * gravel
 
-* [name] (http://wiki.openstreetmap.org/wiki/Key:name) - The name of the path 
+* [access] (http://wiki.openstreetmap.org/wiki/Key:access) - Generic term for who has access to a way.
+  * yes - Pubically Accessible to anyone.
+  * private - Only accessible to owner.
+  * no - No access to the public.
+  * permissive - Open to the public at will of owner.
+  * destination - Local traffic only.
+  * agriculture - Only for agricultural access.
+  * delivery - Only accessible for deliveries.  Service road as an example.
+  * designation - A preferred route.
+  * discouraged - Publically accessible, but discouraged.  A hiking trail behind through someones back yard as an example.
+  * forestry - Only for forestry access.
+  * customers - Only accessible to customers.
 
 ###### Like to have:
 * [sac_scale] (http://wiki.openstreetmap.org/wiki/Key:sac_scale) - A bicycle route classification system. Choice of:
