@@ -43,17 +43,46 @@ Ways are linear features that represent paths, roads, and highways.
 
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [pedestrian] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian) - A road or plaza that only supports pedestrian traffic. A pedestrian way could support a car and often do for deliveries after hours. Often around open street markets
 
+* [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - The material used for the surface.  Choice of: 
+  * paved
+  * asphalt
+  * cobblestone
+  * sett (aka flat cobblestones)
+  * concrete
+  * paving\_stones
+  * unpaved
+  * compacted
+  * dirt
+  * fine_gravel
+  * grass
+  * gravel
 
-##### Path
-* [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - The material used for the surface.  Choice of: paved, asphalt, cobblestone, sett (aka flat cobblestones), concrete, paving\_stones, unpaved, compacted, dirt, fine_gravel, grass, gravel
 * [name] (http://wiki.openstreetmap.org/wiki/Key:name) - The name of the path 
 
 ###### Like to have:
-* [sac_scale] (http://wiki.openstreetmap.org/wiki/Key:sac_scale) - A bicycle route classification system. Choice of: hiking, mountain_hiking, demanding_mountain_hiking)
-* [trail_visibility] (http://wiki.openstreetmap.org/wiki/Key:trail_visibility) - How well the path stands out from the surroundings.  Choice of: no, horrible, bad, intermediate, good, excellent
+* [sac_scale] (http://wiki.openstreetmap.org/wiki/Key:sac_scale) - A bicycle route classification system. Choice of:
+  * hiking
+  * mountain_hiking
+  * demanding_mountain_hiking
+
+* [trail_visibility] (http://wiki.openstreetmap.org/wiki/Key:trail_visibility) - How well the path stands out from the surroundings.  Choice of: 
+  * no
+  * horrible
+  * bad
+  * intermediate
+  * good
+  * excellent
 * [incline] (http://wiki.openstreetmap.org/wiki/Key:incline) - The percent incline or decline for the way.
 * [width] (http://wiki.openstreetmap.org/wiki/Key:width) - The width of the path in meters
-* [smoothness] (http://wiki.openstreetmap.org/wiki/Key:smoothness) - A classification scheme regarding the physical usability of a way for wheeled vehicles, particularly regarding surface regularity/flatness. Choice of: impassable, very_horrible, horrible, very_bad, bad, intermediate, good, excellent
+* [smoothness] (http://wiki.openstreetmap.org/wiki/Key:smoothness) - A classification scheme regarding the physical usability of a way for wheeled vehicles, particularly regarding surface regularity/flatness. Choice of: 
+  * impassable
+  * very_horrible
+  * horrible
+  * very_bad
+  * bad
+  * intermediate
+  * good
+  * excellent
 * [sloped_curb] (http://wiki.openstreetmap.org/wiki/Key:sloped_curb) - The percent incline of the curb cutout.  AKA wheelchair ramps
 * [lit] (http://wiki.openstreetmap.org/wiki/Lit) - Determines whether the path is lit with lamps at night. Choice of: Yes, No
 * foot - Determines whether pedestrians have access. Choice of: Yes, No
