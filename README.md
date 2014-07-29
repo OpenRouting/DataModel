@@ -84,10 +84,18 @@ Ways are linear features that represent paths, roads, and highways.
   * good
   * excellent
 * [sloped_curb] (http://wiki.openstreetmap.org/wiki/Key:sloped_curb) - The percent incline of the curb cutout.  AKA wheelchair ramps
-* [lit] (http://wiki.openstreetmap.org/wiki/Lit) - Determines whether the path is lit with lamps at night. Choice of: Yes, No
-* foot - Determines whether pedestrians have access. Choice of: Yes, No
-* bicycles - Determines whether pedestrians have access. Choice of: Yes, No
-* horses - Determines whether horses have access. Choice of: Yes, No
+* [lit] (http://wiki.openstreetmap.org/wiki/Lit) - Determines whether the path is lit with lamps at night. Choice of:
+  * Yes
+  * No
+* foot - Determines whether pedestrians have access. Choice of: 
+  * Yes
+  * No
+* bicycles - Determines whether pedestrians have access. Choice of: 
+  * Yes
+  * No
+* horses - Determines whether horses have access. Choice of: 
+  * Yes
+  * No
 
 
 
