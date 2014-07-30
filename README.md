@@ -104,13 +104,13 @@ Ways are linear features that represent paths, roads, and highways.
 * horses - Determines whether horses have access. Choice of: 
   * Yes
   * No
-* bridge - Determines whether the segment is a bridge.  Choice Of:
+* [bridge] (http://wiki.openstreetmap.org/wiki/Bridge) - Determines whether the segment is a bridge.  Choice Of:
   * Yes
   * No
-* tunnel - Determines whether the segment is a tunnel.  Choice Of:
+* [tunnel] (http://wiki.openstreetmap.org/wiki/Tunnel) - Determines whether the segment is a tunnel.  Choice Of:
   * Yes
   * No
-* ramp - Defines whether the way is ramp. Choice of:
+* [ramp] (http://wiki.openstreetmap.org/wiki/Key:ramp#Ramps) - Defines whether the way is ramp. Choice of:
   * Yes
   * No
 * ramp:wheelchair - A wheelchair accessible ramp. Choice of:
