@@ -36,6 +36,8 @@ Ways are linear features that represent paths, roads, and highways.
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [footway] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dfootway) - A pedestrian walking path or trail.  This is the normal tag for pedestrian traffic.
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [cycleway] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dcycleway) - Seperate bicycle lane only used by bicycles.  This is not a multi-modal route.
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [steps] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dsteps) - Defines stairs or steps
+  * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [elevator] (http://wiki.openstreetmap.org/wiki/Tag:highway=elevator) - Defines elevator or lift
+  * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [access_ramp] (http://wiki.openstreetmap.org/wiki/Proposed_features/Access_Ramp) - Handicap Accessibility ramp
   * [highway] (http://wiki.openstreetmap.org/wiki/Key:highway) = [pedestrian] (http://wiki.openstreetmap.org/wiki/Tag:highway%3Dpedestrian) - A road or plaza that only supports pedestrian traffic. A pedestrian way could support a car and often do for deliveries after hours. Often around open street markets
 
 * [surface] (http://wiki.openstreetmap.org/wiki/Key:surface) - The material used for the surface.  Choice of: 
@@ -108,3 +110,21 @@ Ways are linear features that represent paths, roads, and highways.
 * tunnel - Determines whether the segment is a tunnel.  Choice Of:
   * Yes
   * No
+* ramp - Defines whether the way is ramp. Choice of:
+  * Yes
+  * No
+* ramp:wheelchair - A wheelchair accessible ramp. Choice of:
+  * Yes
+  * No
+* ramp:stroller - A ramp with stairs down the middle. Choice of:
+  * Yes
+  * No
+* ramp:bicycle - A ramp on the side of a flight of steps for bicycles. Choice of:
+  * Yes
+  * No
+* [conveying] (http://wiki.openstreetmap.org/wiki/Key:conveying) - Defines escalators and moving walkways. Choice of:
+   * Yes - The way is an escalator or moving walkway in the digitized direction
+   * Forward - The way is an escalator or moving walkway in the digitized direction
+   * Backward - The way is an escalator or moving walkway in the *opposite* of the digitized direction
+   * Reversible - The way is an escalator or moving walkway moves in either direction
+  
