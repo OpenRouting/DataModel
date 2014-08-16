@@ -27,14 +27,23 @@ def osm2pgrouting(map_file, config_file, database, username, password):
     
     print upload_response
 
+def osm2pgsql(map_file, style_file, database, username, password):
+    upload_command = 'osm2pgsql'
+    hostname = 'localhost'
+    upload_command = '{0} -c -d {1} -U {2} -H {3} -S {4} {5}'.format(upload_command, database, username, hostname, style_file, map_file)
+    
+    upload_response = subprocess.Popen(upload_command, stdout=PIPE).stdout.read()
+    
+    print upload_response
   
 if __name__ == '__main__':
     extent = sys.argv[1]
     map_file = sys.argv[2]
     config_file = sys.argv[3]
-    database = sys.argv[4]
-    username = sys.argv[5]
-    password = sys.argv[6]
+    style_file = sys.argv[4]
+    database = sys.argv[5]
+    username = sys.argv[6]
+    password = sys.argv[7]
     
 
     if not output_file:
@@ -46,3 +55,4 @@ if __name__ == '__main__':
 
     download(extent, map_file)
     osm2pgrouting(map_file, config_file, database, username, password)
+    osm2pgsql(map_file, style_file, database, username, password)
