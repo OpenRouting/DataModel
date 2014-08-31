@@ -37,16 +37,16 @@ def osm2pgsql(map_file, style_file, database, username, password):
     print upload_response
   
 if __name__ == '__main__':
-    extent = sys.argv[1]
-    map_file = sys.argv[2]
-    config_file = sys.argv[3]
-    style_file = sys.argv[4]
-    database = sys.argv[5]
-    username = sys.argv[6]
-    password = sys.argv[7]
+    extent = sys.argv[0]
+    map_file = sys.argv[1]
+    config_file = sys.argv[2]
+    style_file = sys.argv[3]
+    database = sys.argv[4]
+    username = sys.argv[5]
+    password = sys.argv[6]
     
 
-    if not output_file:
+    if not map_file:
         raise InputError('Output file required')
     if not (extent or len(extent.split(',')) == 4):
         raise InputError('Extent is required in format XMIN,YMIN,XMAX,YMAX')
