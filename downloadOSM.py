@@ -1,6 +1,9 @@
 import sys
 import urllib
 import urllib2
+import subprocess
+from subprocess import Popen, PIPE
+
 
 def download(map_file, extent):
     url = 'http://api.openstreetmap.org/api/0.6/map'
@@ -10,40 +13,44 @@ def download(map_file, extent):
     response = urllib2.urlopen(encoded_url)
     
 
-    with open(output_file, 'w') as writeable:
+    with open(map_file, 'w') as writeable:
         writeable.write(response.read())
         
 def osm2pgrouting(map_file, config_file, database, username, password):
     osm2pgrouting = 'osm2pgrouting'
     
-    upload_command = '{0} -file {1} -conf {2} -dbname {3} -user {4} -passwd {5}'.format(osm2pgrouting, 
-                                                                                        map_file,  
+    upload_command = 'osm2pgrouting -file {0} -conf {1} -dbname {2} -user {3} -passwd {4}'.format(map_file,  
                                                                                         config_file,  
                                                                                         database,  
                                                                                         username, 
                                                                                         password)
-
-    upload_response = subprocess.Popen(upload_command, stdout=PIPE).stdout.read()
+    print upload_command
+    subprocess.call(upload_command)
+    #upload_response = subprocess.Popen(upload_command, stdout=PIPE)
+    #output, errors = upload_response.communicate()
     
-    print upload_response
+    print output
 
 def osm2pgsql(map_file, style_file, database, username, password):
     upload_command = 'osm2pgsql'
     hostname = 'localhost'
     upload_command = '{0} -c -d {1} -U {2} -H {3} -S {4} {5}'.format(upload_command, database, username, hostname, style_file, map_file)
     
-    upload_response = subprocess.Popen(upload_command, stdout=PIPE).stdout.read()
+    print upload_command
+    subprocess.call(upload_command)
+    #output, errors = upload_response.communicate()
     
-    print upload_response
+    #print output
   
 if __name__ == '__main__':
-    extent = sys.argv[0]
-    map_file = sys.argv[1]
-    config_file = sys.argv[2]
-    style_file = sys.argv[3]
-    database = sys.argv[4]
-    username = sys.argv[5]
-    password = sys.argv[6]
+
+    extent = sys.argv[1]
+    map_file = sys.argv[2]
+    config_file = sys.argv[3]
+    style_file = sys.argv[4]
+    database = sys.argv[5]
+    username = sys.argv[6]
+    password = sys.argv[7]
     
 
     if not map_file:
@@ -51,8 +58,9 @@ if __name__ == '__main__':
     if not (extent or len(extent.split(',')) == 4):
         raise InputError('Extent is required in format XMIN,YMIN,XMAX,YMAX')
         
-        
+    print extent, map_file, config_file, style_file
 
-    download(extent, map_file)
-    osm2pgrouting(map_file, config_file, database, username, password)
+
+    #download(map_file, extent)
+    #osm2pgrouting(map_file, config_file, database, username, password)
     osm2pgsql(map_file, style_file, database, username, password)
