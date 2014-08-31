@@ -224,3 +224,18 @@ node,way    3dshapes:ggmodelk       text    delete
 node,way    AND_nosr_r              text    delete
 node,way    import                  text    delete
 node,way    it:fvg:*                text    delete
+
+# pedestrian
+way         sac_scale               text    linear
+way         trail_visibility        text    linear
+way         incline                 text    linear
+way         smoothness              text    linear
+way         sloped_curb             text    linear
+way         lit                     text    linear
+way         ramp                    text    linear
+way         ramp:wheelchair         text    linear
+way         ramp:stroller           text    linear
+way         ramp:bicycle            text    linear
+way         conveying               text    linear
+
+
