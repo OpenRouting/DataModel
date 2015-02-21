@@ -1,29 +1,29 @@
-CREATE OR REPLACE FUNCTION
-pgr_route(
-	IN originpoint geometry,
-	IN destinationpoint geometry,
-	OUT seq integer,
-	OUT gid integer,
-	OUT osm_id integer,
-	OUT name text,
-	OUT heading double precision,
-	OUT cost double precision,
-	OUT geom geometry
-)
-RETURNS SETOF record AS
+CREATE OR REPLACE FUNCTION get_route(
+    IN startpoint geometry,
+    IN endpoint geometry,
+    OUT seq integer,
+    OUT gid integer,
+    OUT name text,
+    OUT heading double precision,
+    OUT cost double precision,
+    OUT geom geometry
+) RETURNS SETOF record AS
 $BODY$
-DECLARE
-	sql text;
-	originid integer;
-	destinationid integer;
-BEGIN
-	EXECUTE 'SELECT get_waypoint(' || originpoint || ')' into originid;
-	RAISE NOTICE 'Origin ID: %', originid;
-	EXECUTE 'SELECT get_waypoint(' || destinationpoint || ')' into destinationid;
-	RAISE NOTICE 'Destination ID: %', destinationid;
+	DECLARE
+		query text;
+		query_query text;
+		originid integer;
+		destinationid integer;
+	BEGIN
+		RAISE NOTICE 'Origin Point: %', ST_AsText(originpoint);
+		RAISE NOTICE 'Destination Point: %', ST_AsText(destination);
+		
+		EXECUTE '' INTO originid USING originpoint;
+		EXECUTE '' INTO destinationid USING destinationpoint;
 
-	RETURN;
-END;
+		RAISE NOTICE 'Origin ID: %', originid;
+		RAISE NOTICE 'Destination ID: %', destinationid;
+
+	END;
 $BODY$
 LANGUAGE 'plpgsql' VOLATILE STRICT;
-	
