@@ -13,18 +13,57 @@ CREATE OR REPLACE FUNCTION routing.get_route(
 $BODY$
 	DECLARE
 		query text;
-		query_query text;
+		sub_query text;
 		originid integer;
 		destinationid integer;
+		rec record;
+		point integer;
+		seq integer;
 	BEGIN
-		RAISE NOTICE 'Origin Point: %', originpoint;
-		RAISE NOTICE 'Destination Point: %', destinationpoint;
-		
 		EXECUTE 'SELECT routing.get_waypoint($1)' INTO originid USING originpoint;
 		EXECUTE 'SELECT routing.get_waypoint($1)' INTO destinationid USING destinationpoint;
 
 		RAISE NOTICE 'Origin ID: %', originid;
 		RAISE NOTICE 'Destination ID: %', destinationid;
-	END;
+
+		sub_query := 'SELECT gid as id, source::int, target::int, length::float AS cost ' ||
+		             'FROM routing.ways_with_info ';
+		             
+		query := 'SELECT id2, the_geom, ST_Reverse(the_geom) AS flip_geom, name, cost, source, target ' ||
+		         'FROM public.pgr_dijkstra(' || quote_literal(sub_query) || ', ' || originid || ', ' || destinationid || ', true, false), routing.ways ' ||
+		         'WHERE id2 = gid ' ||
+		         'ORDER BY seq';
+		RAISE INFO ': %', query;
+
+		point := originid;
+		seq := 0;
+
+		
+		FOR rec IN EXECUTE query
+		LOOP
+			-- Flip geometry (if required)
+			IF ( point != rec.source ) THEN
+				rec.the_geom := rec.flip_geom;
+				point := rec.source;
+			ELSE
+				point := rec.target;
+			END IF;
+
+			-- Calculate heading (simplified)
+			EXECUTE 'SELECT degrees( ST_Azimuth( 
+					ST_StartPoint(''' || rec.the_geom::text || '''),
+					ST_EndPoint(''' || rec.the_geom::text || ''') ) )' 
+				INTO heading;
+
+			-- Return record
+			seq     := seq + 1;
+			gid     := rec.gid;
+			name    := rec.name;
+			cost    := rec.cost;
+			geom    := rec.the_geom;
+			RETURN NEXT;
+		END LOOP;
+		RETURN;
+	END
 $BODY$
 LANGUAGE 'plpgsql' VOLATILE STRICT;
