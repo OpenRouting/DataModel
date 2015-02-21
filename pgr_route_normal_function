@@ -17,15 +17,14 @@ $BODY$
 		originid integer;
 		destinationid integer;
 	BEGIN
-		RAISE NOTICE 'Origin Point: %', ST_AsText(originpoint);
-		RAISE NOTICE 'Destination Point: %', ST_AsText(destinationpoint);
+		RAISE NOTICE 'Origin Point: %', originpoint;
+		RAISE NOTICE 'Destination Point: %', destinationpoint;
 		
-		EXECUTE '' INTO originid USING originpoint;
-		EXECUTE '' INTO destinationid USING destinationpoint;
+		EXECUTE 'SELECT routing.get_waypoint($1)' INTO originid USING originpoint;
+		EXECUTE 'SELECT routing.get_waypoint($1)' INTO destinationid USING destinationpoint;
 
 		RAISE NOTICE 'Origin ID: %', originid;
 		RAISE NOTICE 'Destination ID: %', destinationid;
-
 	END;
 $BODY$
 LANGUAGE 'plpgsql' VOLATILE STRICT;
