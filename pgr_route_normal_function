@@ -1,6 +1,8 @@
-CREATE OR REPLACE FUNCTION get_route(
-    IN startpoint geometry,
-    IN endpoint geometry,
+--DROP FUNCTION routing.get_route(geometry, geometry);
+
+CREATE OR REPLACE FUNCTION routing.get_route(
+    IN originpoint geometry,
+    IN destinationpoint geometry,
     OUT seq integer,
     OUT gid integer,
     OUT name text,
@@ -16,7 +18,7 @@ $BODY$
 		destinationid integer;
 	BEGIN
 		RAISE NOTICE 'Origin Point: %', ST_AsText(originpoint);
-		RAISE NOTICE 'Destination Point: %', ST_AsText(destination);
+		RAISE NOTICE 'Destination Point: %', ST_AsText(destinationpoint);
 		
 		EXECUTE '' INTO originid USING originpoint;
 		EXECUTE '' INTO destinationid USING destinationpoint;
