@@ -1,8 +1,8 @@
--- View: ways_info
--- This view contains additional business information for way lines in the network
+-- View: routing.way_info
 
--- DROP VIEW ways_info;
+-- DROP VIEW routing.way_info;
 
+CREATE OR REPLACE VIEW routing.way_info AS 
  SELECT planet_osm_line.osm_id,
         CASE
             WHEN NOT (planet_osm_line.access = ANY (ARRAY['no'::text, 'private'::text, 'agriculture'::text, 'forestry'::text, 'dicouraged'::text])) THEN false
@@ -68,4 +68,9 @@
     planet_osm_line.incline,
     planet_osm_line.smoothness,
     planet_osm_line.sloped_curb
-   FROM planet_osm_line;
+   FROM osm.planet_osm_line;
+
+ALTER TABLE routing.way_info
+  OWNER TO osm;
+GRANT ALL ON TABLE routing.way_info TO osm;
+GRANT SELECT ON TABLE routing.way_info TO readonly;
