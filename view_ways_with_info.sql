@@ -6,7 +6,7 @@ CREATE OR REPLACE VIEW routing.ways_with_info AS
  SELECT ways.gid,
     ways.source,
     ways.target,
-    ST_Length(ways.the_geom, true) length,
+    st_length(ways.the_geom::geography, true) AS length,
     ways.the_geom,
     way_info.osm_id,
     way_info.public,
@@ -37,3 +37,5 @@ CREATE OR REPLACE VIEW routing.ways_with_info AS
 
 ALTER TABLE routing.ways_with_info
   OWNER TO postgres;
+GRANT ALL ON TABLE routing.ways_with_info TO postgres;
+GRANT SELECT ON TABLE routing.ways_with_info TO readonly;
